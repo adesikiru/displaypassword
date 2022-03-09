@@ -1,0 +1,70 @@
+$label-color:#150C21;
+$alt-text-color:white;
+$padding: 1vw 1.5vw;
+$btn_background-color : #0079c1;
+@mixin input {
+    margin-bottom: 1.5em;
+    background-color: $alt-text-color;
+    box-sizing: border-box;
+    padding: 0 5px 0 5px;
+    border-radius: 5px;
+    min-height: 45px;
+    max-height: 30px;
+    width: 100%;
+    max-width: 100%;
+    color: $label-color;
+    &:focus {
+        
+        border-color: $btn_background-color;
+    }
+}
+@mixin flex($fd, $justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $fd;
+    @content;
+}
+@mixin label {
+    font: {
+        size: 14px;
+        weight: 900;
+    }
+
+    line-height: 1.8;
+    color: $label-color;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.form-group {
+    @include flex(column, flex-start, flex-start);
+
+    label {
+        @include label;
+    }
+
+    input {
+        @include input;
+    }
+
+    textarea {
+        width: 100%;
+        border: none;
+        padding: $padding;
+    }
+    position: relative;
+}
+i{
+    position: absolute;
+    right: 0;
+    bottom: 30%;
+    padding-right: 1em;
+    cursor: pointer;
+    svg{
+        width: 20px;
+    }
+    .none{
+        display: none;
+    }
+}
