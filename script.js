@@ -6,10 +6,9 @@ eyes.forEach(eye => eye.addEventListener('click', (event) => {
     inputtype = input.getAttribute('type')
     if (inputtype === 'password') {
         input.setAttribute("type", "text")
-    } else if (inputtype === 'text') {
-        input.setAttribute("type", "password")
-    } else {
-        input.setAttribute("type", "text")
-    }
+    } else if (inputtype === 'text') { input.setAttribute("type", "password") } else { input.setAttribute("type", "text") }
     console.log(inputtype)
 }))
+
+
+
